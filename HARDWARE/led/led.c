@@ -1,4 +1,5 @@
 #include "led.h"
+#include "beep.h"
 #include "delay.h"
 #include "usart.h"
 extern int time;	// 更改闪灯速度
@@ -109,6 +110,18 @@ void LED_Flash(int i,int times)
 	LED_Close(led_speed_num);
 	delay_ms(times);
 	}
+}
+
+void LED_BEEP_Flash(int i,int times)
+{
+	
+	//BEEP_Open();
+	LED_Open(led_speed_num);
+	delay_ms(times);
+	LED_Close(led_speed_num);
+	//BEEP_Close();
+	delay_ms(times);
+	
 }
 
 // 更改速度

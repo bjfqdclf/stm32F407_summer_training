@@ -27,7 +27,7 @@ void LED_Water(void); // 流水灯
 *
 */
 void LED_Flash(int i,int time);	// 闪灯
-
+void LED_BEEP_Flash(int i,int times);
 /******修改闪灯速度******
 *	param flag:	1 time+		0 time- 
 *	//未实现param interval:	time spacing

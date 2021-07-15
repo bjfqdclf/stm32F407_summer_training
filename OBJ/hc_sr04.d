@@ -36,5 +36,6 @@
 ..\obj\hc_sr04.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\hc_sr04.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\hc_sr04.o: ..\HARDWARE\led\led.h
+..\obj\hc_sr04.o: ..\HARDWARE\key\key.h
 ..\obj\hc_sr04.o: ..\HARDWARE\delay\delay.h
 ..\obj\hc_sr04.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

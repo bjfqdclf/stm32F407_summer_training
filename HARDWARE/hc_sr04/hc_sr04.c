@@ -1,8 +1,10 @@
 #include "hc_sr04.h"
 #include "led.h"
+#include "key.h"
 #include "delay.h"
 #include <stdio.h>
-
+extern int time;	// 更改闪灯速度
+int level=1;
 void HC_SR04_Init(void)	
 {
 	//0、GPIO配置信息结构
@@ -81,4 +83,57 @@ void HC_SR04_Print(void)
 		printf("distant is %dmm\r\n", ultrasonic_distant);
 	}
 	delay_ms(500);
+}
+
+
+
+// 雷达功能
+void HC_SR04_Ladar(void)
+{
+	int ultrasonic_distant;
+	ultrasonic_distant = HC_SR04_Get_Distant();
+	if(ultrasonic_distant>20 && ultrasonic_distant<4000)
+	{
+		time=ultrasonic_distant/level;	
+		printf("distant is %dmm\r\n", ultrasonic_distant);
+	}
+	delay_ms(100);
+}
+
+// 三级可调灵敏度
+void HC_SR04_Ladar_Level(void)
+{
+	LED_Close(level+1);
+	if(level!=3)
+	{
+		level++;
+	}else{
+		level=1;
+	}
+	LED_Open(level+1);
+	//printf("Level:%d\n",level);
+}
+
+void HC_SR04_Ladar_Open(void)
+{
+	if(KEY_Scan()==1)
+	{
+		while(1)
+		{
+			
+			LED_BEEP_Flash(3,time);
+			HC_SR04_Ladar();
+			if(KEY_Check(2)){
+				break;
+			}
+			if(KEY_Check(3)){
+				HC_SR04_Ladar_Level();
+				while(KEY_Check(3));
+			}
+		}
+	}else if(KEY_Scan()==3){
+		HC_SR04_Ladar_Level();
+		while(KEY_Check(3));
+	}
+
 }

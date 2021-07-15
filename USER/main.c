@@ -42,7 +42,7 @@ int main(void)
 {  	
 	
 
-	//int led_num=3;	// 闪灯速度调节灯
+	int led_num=3;	// 闪灯速度调节灯
 	//int hcsr_distant=0;	// 超声波距离
 
 	// 初始化函数
@@ -52,6 +52,7 @@ int main(void)
 	USART1_Init(9600);
 	HC_SR04_Init();
 	
+	LED_Open(2);	// 雷达灵敏度指示灯初始化
 	
 	while(1)
 	{
@@ -85,9 +86,10 @@ int main(void)
 //			printf("distant is %dmm\r\n", ultrasonic_distant);
 //		}
 //		delay_ms(500);
-		HC_SR04_Print();
 		
 		
+		
+		HC_SR04_Ladar_Open();	//	雷达功能开启
 	}
 
 }

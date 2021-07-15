@@ -35,6 +35,7 @@
 ..\obj\led.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\led.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\led.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\led.o: ..\HARDWARE\beep\beep.h
 ..\obj\led.o: ..\HARDWARE\delay\delay.h
 ..\obj\led.o: ..\HARDWARE\usart\usart.h
 ..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

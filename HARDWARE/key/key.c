@@ -62,14 +62,14 @@ int KEY_Scan(void)
 			delay_ms(20);
 			while(KEY_Check(1)==1);	// 等待按键释放
 			delay_ms(20);
-			BEEP_Ring(100);
+			//BEEP_Ring(100);
 			return 1;
 		}
 		else if(KEY_Check(2)==1){
 			delay_ms(20);
 			while(KEY_Check(2)==1);	// 等待按键释放
 			delay_ms(20);
-			BEEP_Ring(100);
+			//BEEP_Ring(100);
 			return 2;
 		}
 		else if(KEY_Check(3)==1){
