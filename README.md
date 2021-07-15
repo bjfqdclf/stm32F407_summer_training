@@ -12,6 +12,11 @@
 #### 连接软件
 - 蓝牙串口小程序
 
+#### 蓝牙AT指令
+- AT  基本信息
+- AT+NAME 名称
+- AT+VERSION  版本
+
 #### 输入指令
 - CloseLed+num	
 - OpenLed+num	
