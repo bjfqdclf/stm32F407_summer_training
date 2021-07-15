@@ -1,9 +1,9 @@
 #include "usart.h"
 #include "led.h"
 #include "delay.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+//#include <string.h>
 extern int time;	// 更改闪灯速度
 extern int speed_falg;	// 闪灯控制标志位
 extern int led_speed_num;	// 控制闪哪个灯
@@ -17,9 +17,34 @@ int usart1_i=0;	// for用的i
 int usart1_flag=0;
 int usart1_led_len=0;
 
-// 重定向printf函数，输出至串口1中
+//// 重定向printf函数，输出至串口1中
+//#if 1
+//#pragma import(__use_no_semihosting)	// 可以关闭半主机模式
+//struct __FILE 
+//{ 
+//	int handle; 
+//}; 
+
+//FILE __stdout;       
+// 
+//int _sys_exit(int x)  				// 避免半主机模式
+//{ 
+//	x = x;
+//	return 0;
+//} 
+
+//int fputc(int ch, FILE *f)
+//{
+//	USART_SendData(USART1, ch);
+//	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+//	return ch;
+//}
+//#endif
+
+
+//0、重定向printf函数，输出内容至串口1中
 #if 1
-#pragma import(__use_no_semihosting)	// 可以关闭半主机模式
+#pragma import(__use_no_semihosting) //可以关闭半主机模式
 struct __FILE 
 { 
 	int handle; 
@@ -27,15 +52,15 @@ struct __FILE
 
 FILE __stdout;       
  
-int _sys_exit(int x)  				// 避免半主机模式
+int _sys_exit(int x)  				//避免半主机模式
 { 
 	x = x;
 	return 0;
-} 
+}
 
 int fputc(int ch, FILE *f)
 {
-	USART_SendData(USART1, ch);
+	USART_SendData(USART1, ch);                           
 	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
 	return ch;
 }

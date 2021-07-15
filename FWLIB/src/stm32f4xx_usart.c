@@ -563,8 +563,8 @@ void USART_SendData(USART_TypeDef* USARTx, uint16_t Data)
   /* Transmit Data */
   USARTx->DR = (Data & (uint16_t)0x01FF);
 	
-	while(USARTx->SR&0X00000040);
-	USARTx->SR &=0XFFFFFFBF;
+//	while(USARTx->SR&0X00000040);
+//	USARTx->SR &=0XFFFFFFBF;
 }
 
 /**

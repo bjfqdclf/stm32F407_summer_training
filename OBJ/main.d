@@ -39,5 +39,7 @@
 ..\obj\main.o: ..\HARDWARE\key\key.h
 ..\obj\main.o: ..\HARDWARE\beep\beep.h
 ..\obj\main.o: ..\HARDWARE\usart\usart.h
-..\obj\main.o: ..\HARDWARE\delay\delay.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: ..\HARDWARE\hc_sr04\hc_sr04.h
+..\obj\main.o: ..\HARDWARE\delay\delay.h

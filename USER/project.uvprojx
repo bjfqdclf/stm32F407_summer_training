@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -487,6 +487,11 @@
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\usart\usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>hc_sr04.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\hc_sr04\hc_sr04.c</FilePath>
             </File>
           </Files>
         </Group>

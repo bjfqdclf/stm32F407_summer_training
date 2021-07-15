@@ -12,6 +12,7 @@
 "..\obj\led.o"
 "..\obj\delay.o"
 "..\obj\usart.o"
+"..\obj\hc_sr04.o"
 --strict --scatter "..\OBJ\project.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
