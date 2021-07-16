@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04;..\HARDWARE\oled;..\SYSTEM\sys</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -493,6 +493,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\hc_sr04\hc_sr04.c</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\OLED\oled.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -500,6 +505,13 @@
         </Group>
         <Group>
           <GroupName>SYSTEM</GroupName>
+          <Files>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\sys\sys.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

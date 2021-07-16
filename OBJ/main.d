@@ -38,6 +38,10 @@
 ..\obj\main.o: ..\HARDWARE\led\led.h
 ..\obj\main.o: ..\HARDWARE\key\key.h
 ..\obj\main.o: ..\HARDWARE\beep\beep.h
+..\obj\main.o: ..\HARDWARE\oled\oled.h
+..\obj\main.o: ..\SYSTEM\sys\sys.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: ..\HARDWARE\oled\oled_bmp.h
 ..\obj\main.o: ..\HARDWARE\usart\usart.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
