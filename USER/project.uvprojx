@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04;..\HARDWARE\oled;..\SYSTEM\sys</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04;..\HARDWARE\oled;..\SYSTEM\sys;..\HARDWARE\dht11</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -497,6 +497,11 @@
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\OLED\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>dht11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\dht11\dht11.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -46,4 +46,5 @@
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\main.o: ..\HARDWARE\hc_sr04\hc_sr04.h
+..\obj\main.o: ..\HARDWARE\dht11\dht11.h
 ..\obj\main.o: ..\HARDWARE\delay\delay.h
