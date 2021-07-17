@@ -63,4 +63,7 @@
 - [DH T 1 1&DS18 B20](https://s.taobao.com/search?q=DH+T+1+1%26DS18+B20&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210715&ie=utf8 "直达链接")
 # OLED模块
 ## 硬件信息
-- 
+
+# 指纹模块
+## 硬件信息
+- [AS608](https://s.taobao.com/search?q=as608&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=&ie=utf8&initiative_id=tbindexz_20170306 "直达链接")
