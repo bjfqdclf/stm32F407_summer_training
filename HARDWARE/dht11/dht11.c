@@ -1,6 +1,6 @@
 #include "dht11.h"
-
-
+#include "usart.h"
+#include "oled.h"
 //1、初始化dhtll函数
 void DHT11_Init(void)
 {
@@ -145,15 +145,38 @@ void DTH11_Get_Print(void)
 		//获取温湿度模块数据
 	char dht11_buf[5]={0};			//温湿度模块数据存储数组
 	int dht11_ret=0;			//温湿度返回值
-		
+	int temp1,dir1,temp2,dir2;
 	dht11_ret = DHT11_Get_Data(dht11_buf);
-
+	temp1=dht11_buf[2];
+	dir1=dht11_buf[0];
+	temp2=dht11_buf[3];
+	dir2=dht11_buf[1];
 	if(dht11_ret == 0)
 	{
 		printf("temp：%d.%d, humi：%d.%d\r\n", dht11_buf[2], dht11_buf[3], dht11_buf[0], dht11_buf[1]);
+		OLED_Clear();
+		OLED_ShowCHinese(28,0,3);	//开，3
+		OLED_ShowCHinese(46,0,4);	//机，4
+		OLED_ShowCHinese(64,0,5);	//状，5
+		OLED_ShowCHinese(82,0,6);	//态，6
+		OLED_ShowChar(100,0,'***',3);
+
+		
+		OLED_ShowCHinese(14,3,0);	//温，0
+		OLED_ShowCHinese(32,3,1);	//度，1
+		OLED_ShowNum(55,3,temp1,2,16);	// 数字
+
+		OLED_ShowNum(75,4,temp2,1,10);	// 数字
+		OLED_ShowCHinese(90,3,1);	//度，1
+		
+		OLED_ShowCHinese(14,5,2);	//湿，2
+		OLED_ShowCHinese(32,5,1);	//度，1
+		OLED_ShowNum(55,5,dir1,2,16);	// 数字
+
+		OLED_ShowNum(75,6,dir2,1,10);	// 数字
+		OLED_ShowString(90,5,"%SH",16);
 	}
-	
-	delay_ms(5000);
+
 }
 
 

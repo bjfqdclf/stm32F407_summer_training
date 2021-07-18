@@ -48,3 +48,7 @@
 ..\obj\main.o: ..\HARDWARE\hc_sr04\hc_sr04.h
 ..\obj\main.o: ..\HARDWARE\dht11\dht11.h
 ..\obj\main.o: ..\HARDWARE\delay\delay.h
+..\obj\main.o: ..\HARDWARE\as608_usart2\as608_usart2.h
+..\obj\main.o: ..\HARDWARE\as608\as608_func.h
+..\obj\main.o: ..\HARDWARE\as608\as608.h
+..\obj\main.o: ..\HARDWARE\oled\oled_display.h

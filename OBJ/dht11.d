@@ -36,3 +36,9 @@
 ..\obj\dht11.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\dht11.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\dht11.o: ..\HARDWARE\delay\delay.h
+..\obj\dht11.o: ..\HARDWARE\usart\usart.h
+..\obj\dht11.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\dht11.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\dht11.o: ..\HARDWARE\oled\oled.h
+..\obj\dht11.o: ..\SYSTEM\sys\sys.h
+..\obj\dht11.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

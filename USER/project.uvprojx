@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04;..\HARDWARE\oled;..\SYSTEM\sys;..\HARDWARE\dht11</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\led;..\HARDWARE\key;..\HARDWARE\beep;..\HARDWARE\delay;..\HARDWARE\usart;..\HARDWARE\hc_sr04;..\HARDWARE\oled;..\SYSTEM\sys;..\HARDWARE\dht11;..\HARDWARE\as608;..\HARDWARE\as608_usart2;..\HARDWARE\timer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -458,6 +458,11 @@
               <FileType>1</FileType>
               <FilePath>..\FWLIB\src\stm32f4xx_usart.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FWLIB\src\stm32f4xx_tim.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -502,6 +507,31 @@
               <FileName>dht11.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\dht11\dht11.c</FilePath>
+            </File>
+            <File>
+              <FileName>as608_usart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\as608_usart2\as608_usart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>as608.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\as608\as608.c</FilePath>
+            </File>
+            <File>
+              <FileName>as608_func.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\as608\as608_func.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\timer\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled_display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\oled\oled_display.c</FilePath>
             </File>
           </Files>
         </Group>

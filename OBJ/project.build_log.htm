@@ -22,11 +22,32 @@ Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
 C:\Users\mikawa\Desktop\ʵѵ\project1\project\USER\project.uvprojx
-Project File Date:  07/16/2021
+Project File Date:  07/17/2021
 
 <h2>Output:</h2>
 Build target 'project'
-"..\OBJ\project.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+..\HARDWARE\oled\oled_display.h(65): warning:  #1-D: last line of file ends without a newline
+  #endif /* __USART_H */
+main.c(457): warning:  #175-D: subscript out of range
+                                                                                        OLED_ShowNum(64,5,password_buf[4],1,16);
+main.c(465): warning:  #223-D: function "OLED_Dispaly_Admin_System_Choose" declared implicitly
+                                                                                        OLED_Dispaly_Admin_System_Choose(choose);
+main.c(562): warning:  #223-D: function "OLED_Dispaly_Admin_System_Choose" declared implicitly
+                                                                                                OLED_Dispaly_Admin_System_Choose(choose);
+main.c(612): warning:  #223-D: function "OLED_Dispaly_Admin_System_Choose" declared implicitly
+                                                                                        OLED_Dispaly_Admin_System_Choose(choose);
+main.c: 5 warnings, 0 errors
+compiling dht11.c...
+..\HARDWARE\dht11\dht11.c(162): warning:  #2548-D: multicharacter character literal (potential portability problem)
+                OLED_ShowChar(100,0,'***',3);
+..\HARDWARE\dht11\dht11.c(162): warning:  #69-D: integer conversion resulted in truncation
+                OLED_ShowChar(100,0,'***',3);
+..\HARDWARE\dht11\dht11.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=11386 RO-data=2514 RW-data=24772 ZI-data=2452  
+FromELF: creating hex file...
+"..\OBJ\project.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\mikawa\Desktop\ʵѵ\project1\project\USER\RTE

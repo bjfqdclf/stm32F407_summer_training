@@ -13,9 +13,20 @@ extern int led_arr_flag[];	// 有无开灯的标志
 char usart1_r_data_buf[128]={0};	// 接收来自串口1的字符串数组存放区
 char usart1_r_data_tmp_buf[128]={0};	// 接收来自串口1的字符串数组存放区中间变量
 int usart1_r_data_buf_count=0;	// 接收来自串口1的字符串数组计数值
-int usart1_i=0;	// for用的i
-int usart1_flag=0;
+int usart1_fi=0;	// for用的i
+int usart1_fflag=0;
 int usart1_led_len=0;
+
+
+
+char uart1_buf[128] 		= {0};		//接收来自串口1的字符串的数组存放区
+char uart1_temp_buf[128] 	= {0};		//接收来自串口1的字符串的数组存放区，中间值
+int  count					=  0 ;		//数据计数值
+int  usart1_i				=  0 ;		//for循环用的i数
+int  usart1_flag			=  0 ;		//检测是否有字符串进入(开关)
+int  usart1_delay_val		= 500;		//delay函数的参数，改变延时数
+
+int  usart1_ps_flag			=  0 ;		//指纹功能控制标志
 
 //// 重定向printf函数，输出至串口1中
 //#if 1
@@ -66,6 +77,7 @@ int fputc(int ch, FILE *f)
 }
 #endif
 
+	
 void USART1_Init(int baud)
 {
 	// GPIO配置信息结构体
@@ -112,30 +124,54 @@ void USART1_Init(int baud)
 }
 
 // 终端服务函数
+//void USART1_IRQHandler(void)
+//{	
+//	//uint8_t r_data=0;	// 接收到的数据
+//	//USART_ClearITPendingBit
+//	if(USART_GetITStatus(USART1,USART_IT_RXNE)==1)	// 判断发送标志位是否为1
+//	{	
+//		usart1_r_data_tmp_buf[usart1_r_data_buf_count++]=USART_ReceiveData(USART1);	// 接收数据到数组	eg:'ligoudan\r\n'		
+//		usart1_led_len=usart1_r_data_buf_count;
+//		if(usart1_r_data_tmp_buf[usart1_r_data_buf_count-1]=='@' && usart1_r_data_tmp_buf[usart1_r_data_buf_count-2]=='@')	// 判断发字符串是否发送完毕
+//		{
+//			for(usart1_fi=0;usart1_fi<usart1_r_data_buf_count-2;usart1_fi++)
+//			{
+//				usart1_r_data_buf[usart1_fi]=usart1_r_data_tmp_buf[usart1_fi];
+//			}
+//			usart1_fflag=1;
+//			memset(usart1_r_data_tmp_buf,0,sizeof(usart1_r_data_tmp_buf));	// 清空字符串
+//			usart1_r_data_buf_count=0;	// 计数值清零
+//		}
+//		
+//		//USART_Led_Speed_Adjust(r_data);	// 闪灯速度改变
+//		USART_ClearITPendingBit(USART1,USART_IT_RXNE);	// 清除串口中断标志位
+//	}
+//}
 void USART1_IRQHandler(void)
-{	
-	//uint8_t r_data=0;	// 接收到的数据
-	//USART_ClearITPendingBit
-	if(USART_GetITStatus(USART1,USART_IT_RXNE)==1)	// 判断发送标志位是否为1
-	{	
-		usart1_r_data_tmp_buf[usart1_r_data_buf_count++]=USART_ReceiveData(USART1);	// 接收数据到数组	eg:'ligoudan\r\n'		
-		usart1_led_len=usart1_r_data_buf_count;
-		if(usart1_r_data_tmp_buf[usart1_r_data_buf_count-1]=='@' && usart1_r_data_tmp_buf[usart1_r_data_buf_count-2]=='@')	// 判断发字符串是否发送完毕
-		{
-			for(usart1_i=0;usart1_i<usart1_r_data_buf_count-2;usart1_i++)
-			{
-				usart1_r_data_buf[usart1_i]=usart1_r_data_tmp_buf[usart1_i];
-			}
-			usart1_flag=1;
-			memset(usart1_r_data_tmp_buf,0,sizeof(usart1_r_data_tmp_buf));	// 清空字符串
-			usart1_r_data_buf_count=0;	// 计数值清零
-		}
+{
 		
-		//USART_Led_Speed_Adjust(r_data);	// 闪灯速度改变
-		USART_ClearITPendingBit(USART1,USART_IT_RXNE);	// 清除串口中断标志位
-	}
+	//三、发送字符命令控制指纹功能
+	uint16_t r_data = 0;								//0、定义一个接收值变量
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) == 1)	//1、判断中断标志位是否为1
+	{
+		//USART_SendData();								//2、发送数据
+		r_data = USART_ReceiveData(USART1);				//3、接收数据
+		if(r_data == '1')
+		{
+			usart1_ps_flag = 1;
+		}
+		if(r_data == '2')
+		{
+			usart1_ps_flag = 2;
+		}	
+		if(r_data == '3')
+		{
+			usart1_ps_flag = 3;
+		}
+		printf("usart1_ps_flag == %d\r\n", usart1_ps_flag);
+		USART_ClearITPendingBit(USART1, USART_IT_RXNE);	//8、清楚串口中断标志位，清0
+	}	
 }
-
 
 // 发送单个字符
 void USART_Send_word(uint16_t word)
@@ -249,9 +285,9 @@ void USART_Recv_Data_Do(void)
 			printf("DO ERRO\n");
 		}
 	}
-	if(usart1_flag)
+	if(usart1_fflag)
 	{
 		memset(usart1_r_data_buf,0,sizeof(usart1_r_data_tmp_buf));	// 清空字符串
-		usart1_flag=0;
+		usart1_fflag=0;
 	}
 }
