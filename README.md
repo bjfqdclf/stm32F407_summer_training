@@ -28,6 +28,13 @@
 ```
 
 # 基本信息
+## fp分支实现智能指纹门锁项目
+- 开机启动显示温度湿度
+- 可用按键控制菜单选择，返回，确定
+- 连续输入5次错误密码或指纹将锁住
+- 管理员重置密码，可继续使用
+- 管理员可以添加指纹、删除指纹（未实现，已留接口）
+- 多次检测有人时警报（未实现，可通过超声波接口实现）
 ## 硬件
 - [STM32F407ZE](https://s.taobao.com/search?q=STM32F407ZE&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210715&ie=utf8 "直达链接")
 - [J-Link下载器](https://s.taobao.com/search?q=J-Link%E4%B8%8B%E8%BD%BD%E5%99%A8&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210715&ie=utf8 "直达链接")
