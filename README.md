@@ -51,7 +51,7 @@
 - AT+NAME 名称
 - AT+VERSION  版本
 
-#### 输入指令
+### 蓝牙接收端输入指令
 - CloseLed+num	
 - OpenLed+num	
 - LedFast
@@ -70,6 +70,11 @@
 - [DH T 1 1&DS18 B20](https://s.taobao.com/search?q=DH+T+1+1%26DS18+B20&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210715&ie=utf8 "直达链接")
 # OLED模块
 ## 硬件信息
+- 硬件型号：0.7寸OLED显示屏
+- 分辨率：128*64
+- 通信协议：IIC
+## 软件信息
+- 部分驱动代码移植于正点原子
 
 # 指纹模块
 ## 硬件信息
