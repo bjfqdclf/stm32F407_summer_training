@@ -52,12 +52,13 @@
 - AT+VERSION  版本
 
 ### 蓝牙接收端输入指令
-- CloseLed+num	
-- OpenLed+num	
-- LedFast
-- LedLow
-- LedShan+num	
-- LedNotShan+num	
+> 发送指令前加 @@ 符号作为指令协议
+- CloseLed+num  关灯+(1,2,3,4)
+- OpenLed+num	  点灯+(1,2,3,4)
+- LedFast 闪灯速度变快
+- LedLow  闪灯速度变慢
+- LedShan+num	  闪灯+(1,2,3,4)
+- LedNotShan+num  停止闪灯+(1,2,3,4)
 # 超声波模块
 ## 硬件信息
 - [HC-SR04](https://s.taobao.com/search?q=HC-SR04&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210715&ie=utf8 "直达链接")
